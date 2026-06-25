@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getRelatedPerfumeEntries } from "@/lib/analyzePerfume";
 import type { FragranceEntry, ReferencePerfume } from "@/types/fragrance";
 import { getEntryDisplay, getFacetLabel, getNotesStatusLabel, getOfficialNoteLabel, getPerfumeDisplay } from "@/lib/displayLabels";
+import { PerfumeImage } from "@/components/PerfumeImage";
+import { PerfumeUserNotes } from "@/components/PerfumeUserNotes";
 
 function TextSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -18,12 +20,15 @@ export function PerfumeDetail({ perfume }: { perfume: ReferencePerfume }) {
 
   return (
     <article className="space-y-5">
-      <div>
-        <p className="text-sm font-medium text-ink/65">{display.brandPrimary}</p>
-        {display.brandSecondary && <p className="mt-1 text-sm text-ink/45">{display.brandSecondary}</p>}
-        <h1 className="mt-2 text-4xl font-semibold text-ink">{display.productPrimary}</h1>
-        {display.productSecondary && <p className="mt-2 text-lg text-ink/55">{display.productSecondary}</p>}
-        <p className="mt-2 text-ink/65">{perfume.concentration ?? "濃度は要確認"}</p>
+      <div className="grid gap-5 md:grid-cols-[minmax(0,1fr)_20rem] md:items-start">
+        <div>
+          <p className="text-sm font-medium text-ink/65">{display.brandPrimary}</p>
+          {display.brandSecondary && <p className="mt-1 text-sm text-ink/45">{display.brandSecondary}</p>}
+          <h1 className="mt-2 text-4xl font-semibold text-ink">{display.productPrimary}</h1>
+          {display.productSecondary && <p className="mt-2 text-lg text-ink/55">{display.productSecondary}</p>}
+          <p className="mt-2 text-ink/65">{perfume.concentration ?? "濃度は要確認"}</p>
+        </div>
+        <PerfumeImage perfume={perfume} />
       </div>
       <TextSection title="基本情報">
         <p>{perfume.shortSummary}</p>
@@ -59,6 +64,7 @@ export function PerfumeDetail({ perfume }: { perfume: ReferencePerfume }) {
           {perfume.userNotes.map((item) => <li key={item}>{item}</li>)}
         </ul>
       </TextSection>
+      <PerfumeUserNotes perfumeId={perfume.id} />
       <TextSection title="関連項目">
         <div className="flex flex-wrap gap-2">
           {related.map((item) =>

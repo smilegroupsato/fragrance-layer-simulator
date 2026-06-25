@@ -66,7 +66,7 @@ export function PerfumeForm() {
     <section className="rounded-lg border border-black/10 bg-white/75 p-5">
       <h2 className="text-lg font-semibold text-ink">香水メモを追加</h2>
       <p className="mt-2 text-sm leading-6 text-ink/65">
-        このメモは同じブラウザ内に保存されます。DB、外部API、GitHub上の静的データには保存されません。
+        このメモは同じブラウザ内に保存されます。別端末・別ブラウザには同期されません。DB、外部API、GitHub上の静的データには保存されません。
       </p>
       <form onSubmit={submit} className="mt-4 grid gap-3 md:grid-cols-2">
         {(["url", "brand", "name", "memo"] as const).map((field) => (

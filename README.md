@@ -19,6 +19,7 @@ The goal is not precise smell prediction. The goal is a clean static UI for read
 - 詳細ページ：関連素材、関連分子、関連語彙、関連イメージなどを表示します。
 - 参照香水：公式情報、AI風レイヤー分析、一般的な言説、自分のメモを分けて表示します。
 - 香水メモ：同じブラウザ内の `localStorage` に保存され、ページリロード後も残ります。
+- 既存香水へのユーザーメモ：参照香水ごとに、自分の試香メモを同じブラウザ内へ保存できます。
 - 簡易ブレンド：素材と比率を選び、`ratio * intensity` の簡易スコアで構造を読みます。
 - 表示言語：UI は日本語中心です。内部 ID、route、TypeScript field 名は英語のままです。
 
@@ -56,6 +57,17 @@ pnpm run build
 ```
 
 変更完了前には必ず build を通してください。
+
+## localStorage保存 / Local Browser Storage
+
+v0.1.1 では、ユーザーが入力するメモは同じブラウザ内の `localStorage` に保存します。
+
+- 追加香水メモ: `fls.localPerfumeNotes`
+- 既存参照香水ごとのユーザーメモ: `fls.userNotesByPerfumeId`
+
+これらのデータは同じブラウザ内ではページリロード後も保持されます。ただし、別端末・別ブラウザには同期されません。DB、外部API、GitHub上の静的データにも保存されません。
+
+将来的には、DB同期や export/import への移行を検討します。そのため、既存参照香水へのユーザーメモは `id`、`perfumeId`、`createdAt`、`text` を持つ JSON 構造として保存します。
 
 ## 運用方針 / Repository Policy
 

@@ -39,6 +39,7 @@ export interface ReferencePerfume {
   brandJa?: string;
   name: string;
   nameJa?: string;
+  imageUrl?: string;
   concentration?: string;
   keyDescriptors: string[];
   shortSummary: string;
@@ -56,6 +57,22 @@ export interface ReferencePerfume {
   publicDiscourse: string[];
   userNotes: string[];
   relatedEntryIds: string[];
+}
+
+export type UserPerfumeNoteContext = {
+  testedOn?: "skin" | "paper" | "unknown";
+  season?: string;
+  weather?: string;
+  place?: string;
+};
+
+export interface UserPerfumeNote {
+  id: string;
+  perfumeId: string;
+  createdAt: string;
+  updatedAt?: string;
+  text: string;
+  context?: UserPerfumeNoteContext;
 }
 
 export interface BlendItem {
