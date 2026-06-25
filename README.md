@@ -18,6 +18,7 @@ The goal is not precise smell prediction. The goal is a clean static UI for read
 - 用語集フィルタ：検索語、種別、香調タグを URL query に同期して復元できます。
 - 詳細ページ：関連素材、関連分子、関連語彙、関連イメージなどを表示します。
 - 参照香水：公式情報、AI風レイヤー分析、一般的な言説、自分のメモを分けて表示します。
+- 香水メモ：同じブラウザ内の `localStorage` に保存され、ページリロード後も残ります。
 - 簡易ブレンド：素材と比率を選び、`ratio * intensity` の簡易スコアで構造を読みます。
 - 表示言語：UI は日本語中心です。内部 ID、route、TypeScript field 名は英語のままです。
 
@@ -26,6 +27,7 @@ The goal is not precise smell prediction. The goal is a clean static UI for read
 - 認証は追加しません。
 - データベースは追加しません。
 - 外部 API は使いません。
+- 香水メモは GitHub 上の静的データには書き込みません。
 - Web スクレイピングはしません。
 - 画像アップロードは追加しません。
 - 公式香水ノートを推測・捏造しません。
