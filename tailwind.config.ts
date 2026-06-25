@@ -5,11 +5,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#24302f",
-        paper: "#fbfaf7",
+        ink: "#2f2428",
+        paper: "#fff7f8",
         moss: "#4e6f62",
-        clay: "#a76d57",
-        mist: "#e7ece8"
+        clay: "#a76d70",
+        mist: "#f7e8ec"
       }
     }
   },

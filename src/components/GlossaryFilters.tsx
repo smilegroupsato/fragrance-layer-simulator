@@ -1,20 +1,23 @@
 "use client";
 
 import type { FragranceEntryType } from "@/types/fragrance";
-import { getTypeLabel } from "@/lib/displayLabels";
+import { getFacetLabel, getTypeLabel } from "@/lib/displayLabels";
 
 const filterOptions: Array<"all" | FragranceEntryType> = ["all", "descriptor", "material", "plant", "molecule", "physiology", "image"];
 
 interface GlossaryFiltersProps {
   query: string;
   type: "all" | FragranceEntryType;
+  facet: string;
+  facetOptions: string[];
   onQueryChange: (query: string) => void;
   onTypeChange: (type: "all" | FragranceEntryType) => void;
+  onFacetChange: (facet: string) => void;
 }
 
-export function GlossaryFilters({ query, type, onQueryChange, onTypeChange }: GlossaryFiltersProps) {
+export function GlossaryFilters({ query, type, facet, facetOptions, onQueryChange, onTypeChange, onFacetChange }: GlossaryFiltersProps) {
   return (
-    <div className="mb-6 rounded-lg border border-black/10 bg-white/70 p-4">
+    <div className="mb-6 rounded-lg border border-rose-100 bg-white/80 p-4 shadow-sm">
       <label className="block text-sm font-medium text-ink" htmlFor="glossary-search">
         検索
       </label>
@@ -22,7 +25,7 @@ export function GlossaryFilters({ query, type, onQueryChange, onTypeChange }: Gl
         id="glossary-search"
         value={query}
         onChange={(event) => onQueryChange(event.target.value)}
-        className="mt-2 w-full rounded-md border border-black/15 bg-white px-3 py-2 text-sm outline-none focus:border-moss"
+        className="mt-2 w-full rounded-md border border-rose-100 bg-white px-3 py-2 text-sm outline-none focus:border-clay"
         placeholder="名前、香調タグ、概要..."
       />
       <p className="mt-4 text-sm font-medium text-ink">種別</p>
@@ -38,6 +41,22 @@ export function GlossaryFilters({ query, type, onQueryChange, onTypeChange }: Gl
           </button>
         ))}
       </div>
+      <label className="mt-4 block text-sm font-medium text-ink" htmlFor="facet-filter">
+        香調タグ
+      </label>
+      <select
+        id="facet-filter"
+        value={facet}
+        onChange={(event) => onFacetChange(event.target.value)}
+        className="mt-2 w-full rounded-md border border-rose-100 bg-white px-3 py-2 text-sm outline-none focus:border-clay"
+      >
+        <option value="">すべて</option>
+        {facetOptions.map((option) => (
+          <option key={option} value={option}>
+            {getFacetLabel(option)}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }
