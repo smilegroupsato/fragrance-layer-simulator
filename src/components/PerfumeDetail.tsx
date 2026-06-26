@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getRelatedPerfumeEntries } from "@/lib/analyzePerfume";
 import type { FragranceEntry, ReferencePerfume } from "@/types/fragrance";
 import { getEntryDisplay, getFacetLabel, getNotesStatusLabel, getOfficialNoteLabel, getPerfumeDisplay } from "@/lib/displayLabels";
-import { PerfumeImage } from "@/components/PerfumeImage";
+import { PerfumeImageCarousel } from "@/components/PerfumeImageCarousel";
 import { PerfumeUserNotes } from "@/components/PerfumeUserNotes";
 
 function TextSection({ title, children }: { title: string; children: React.ReactNode }) {
@@ -28,7 +28,7 @@ export function PerfumeDetail({ perfume }: { perfume: ReferencePerfume }) {
           {display.productSecondary && <p className="mt-2 text-lg text-ink/55">{display.productSecondary}</p>}
           <p className="mt-2 text-ink/65">{perfume.concentration ?? "濃度は要確認"}</p>
         </div>
-        <PerfumeImage perfume={perfume} />
+        <PerfumeImageCarousel perfume={perfume} />
       </div>
       <TextSection title="基本情報">
         <p>{perfume.shortSummary}</p>

@@ -59,6 +59,17 @@ export interface ReferencePerfume {
   relatedEntryIds: string[];
 }
 
+export type PerfumeImageSource = "official" | "user";
+
+export interface PerfumeImageItem {
+  id: string;
+  perfumeId: string;
+  imageUrl: string;
+  source: PerfumeImageSource;
+  sortOrder: number;
+  createdAt?: string;
+}
+
 export type UserPerfumeNoteContext = {
   testedOn?: "skin" | "paper" | "unknown";
   season?: string;
