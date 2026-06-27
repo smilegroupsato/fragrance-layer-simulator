@@ -41,7 +41,6 @@ export interface ReferencePerfume {
   nameJa?: string;
   imageUrl?: string;
   concentration?: string;
-  sourceNotionUrl?: string;
   dictionaryText?: string;
   oneLineSummary?: string;
   acquiredOn?: string;

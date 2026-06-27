@@ -54,7 +54,7 @@ export function PerfumeDetail({ perfume }: { perfume: ReferencePerfume }) {
           ))}
         </div>
       </TextSection>
-      {(perfume.oneLineSummary || perfume.userImpression || perfume.dictionaryText || perfume.cardNotes?.length || perfume.sourceNotionUrl) && (
+      {(perfume.oneLineSummary || perfume.userImpression || perfume.dictionaryText || perfume.cardNotes?.length) && (
         <TextSection title="香水辞典">
           {perfume.oneLineSummary && (
             <div>
@@ -74,13 +74,6 @@ export function PerfumeDetail({ perfume }: { perfume: ReferencePerfume }) {
               {perfume.cardNotes.map((note) => <li key={note}>{note}</li>)}
             </ul>
           ) : null}
-          {perfume.sourceNotionUrl && (
-            <p className="mt-4">
-              <a href={perfume.sourceNotionUrl} className="text-moss underline" target="_blank" rel="noreferrer">
-                Notion参照
-              </a>
-            </p>
-          )}
         </TextSection>
       )}
       <TextSection title="公式情報">
