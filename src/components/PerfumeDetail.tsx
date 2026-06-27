@@ -32,12 +32,57 @@ export function PerfumeDetail({ perfume }: { perfume: ReferencePerfume }) {
       </div>
       <TextSection title="基本情報">
         <p>{perfume.shortSummary}</p>
+        {(perfume.collection || perfume.displayCategory) && (
+          <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
+            {perfume.collection && (
+              <div>
+                <dt className="text-ink/45">コレクション</dt>
+                <dd className="text-ink/75">{perfume.collection}</dd>
+              </div>
+            )}
+            {perfume.displayCategory && (
+              <div>
+                <dt className="text-ink/45">表示分類</dt>
+                <dd className="text-ink/75">{perfume.displayCategory}</dd>
+              </div>
+            )}
+          </dl>
+        )}
         <div className="mt-3 flex flex-wrap gap-2">
           {perfume.keyDescriptors.map((item) => (
             <span key={item} className="rounded-md bg-mist px-2 py-1 text-xs text-ink/70">{getFacetLabel(item)}</span>
           ))}
         </div>
       </TextSection>
+      {(perfume.oneLineSummary || perfume.userImpression || perfume.dictionaryText || perfume.cardNotes?.length || perfume.sourceNotionUrl) && (
+        <TextSection title="香水辞典">
+          {perfume.oneLineSummary && (
+            <div>
+              <h3 className="text-xs font-medium uppercase tracking-[0.18em] text-clay">一文で言うなら</h3>
+              <p className="mt-1 text-base leading-7 text-ink">{perfume.oneLineSummary}</p>
+            </div>
+          )}
+          {perfume.userImpression && (
+            <div className="mt-4">
+              <h3 className="text-xs font-medium uppercase tracking-[0.18em] text-clay">実香メモ</h3>
+              <p className="mt-1">{perfume.userImpression}</p>
+            </div>
+          )}
+          {perfume.dictionaryText && <p className="mt-4">{perfume.dictionaryText}</p>}
+          {perfume.cardNotes?.length ? (
+            <ul className="mt-4 list-disc space-y-1 pl-5">
+              {perfume.cardNotes.map((note) => <li key={note}>{note}</li>)}
+            </ul>
+          ) : null}
+          {perfume.sourceNotionUrl && (
+            <p className="mt-4">
+              <a href={perfume.sourceNotionUrl} className="text-moss underline" target="_blank" rel="noreferrer">
+                Notion参照
+              </a>
+            </p>
+          )}
+        </TextSection>
+      )}
       <TextSection title="公式情報">
         <p>ノート確認状況：{getNotesStatusLabel(perfume.officialInfo.notesStatus)}</p>
         <ul className="mt-2 list-disc space-y-1 pl-5">

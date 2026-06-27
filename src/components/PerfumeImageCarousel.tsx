@@ -1,26 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { PerfumeImageItem, ReferencePerfume } from "@/types/fragrance";
-
-const userImageItems: PerfumeImageItem[] = [];
-
-function getPerfumeImageItems(perfume: ReferencePerfume): PerfumeImageItem[] {
-  const officialItems: PerfumeImageItem[] = perfume.imageUrl
-    ? [
-        {
-          id: `${perfume.id}-official-image`,
-          perfumeId: perfume.id,
-          imageUrl: perfume.imageUrl,
-          source: "official",
-          sortOrder: 0
-        }
-      ]
-    : [];
-
-  return [...officialItems, ...userImageItems.filter((item) => item.perfumeId === perfume.id)]
-    .sort((a, b) => a.sortOrder - b.sortOrder);
-}
+import { getPerfumeImageItems } from "@/data/perfumeImages";
+import type { ReferencePerfume } from "@/types/fragrance";
 
 export function PerfumeImageCarousel({ perfume }: { perfume: ReferencePerfume }) {
   const label = `${perfume.brand} ${perfume.name}`;

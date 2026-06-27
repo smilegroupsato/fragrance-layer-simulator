@@ -151,6 +151,8 @@ const facetLabels: Record<string, string> = {
   steamy: "湯気",
   tropical: "トロピカル",
   lactonic: "ラクトン的",
+  intimate: "親密",
+  musk: "ムスク",
   perception: "知覚",
   individual: "個人差",
   threshold: "閾値",
