@@ -106,7 +106,7 @@ export const referencePerfumes: ReferencePerfume[] = [
     relatedEntryIds: ["mango", "creamy", "mandarin", "silk-scarf"]
   },
   {
-    id: "muskara-rosa-fueguia-1833",
+    id: "fueguia-1833-muskara-rosa",
     brand: "FUEGUIA 1833 / Patagonia",
     brandJa: "フエギア 1833 / パタゴニア",
     name: "Muskara Rosa",
@@ -131,7 +131,7 @@ export const referencePerfumes: ReferencePerfume[] = [
     relatedEntryIds: ["rose", "skin-scent", "petal-shadow"]
   },
   {
-    id: "alma-fueguia-1833",
+    id: "fueguia-1833-alma",
     brand: "FUEGUIA 1833 / Patagonia",
     brandJa: "フエギア 1833 / パタゴニア",
     name: "Alma",
@@ -160,7 +160,7 @@ export const referencePerfumes: ReferencePerfume[] = [
     relatedEntryIds: ["jasmine", "tea-leaf", "skin-scent", "steam-over-cup"]
   },
   {
-    id: "muskara-boswellia-fueguia-1833",
+    id: "fueguia-1833-muskara-boswellia",
     brand: "FUEGUIA 1833 / Patagonia",
     brandJa: "フエギア 1833 / パタゴニア",
     name: "Muskara Boswellia",
@@ -185,7 +185,7 @@ export const referencePerfumes: ReferencePerfume[] = [
     relatedEntryIds: ["frankincense", "incense-smoke", "temple-air", "amber", "skin-scent"]
   },
   {
-    id: "pampa-humeda-fueguia-1833",
+    id: "fueguia-1833-pampa-humeda",
     brand: "FUEGUIA 1833 / Patagonia",
     brandJa: "フエギア 1833 / パタゴニア",
     name: "Pampa Húmeda",
@@ -210,7 +210,7 @@ export const referencePerfumes: ReferencePerfume[] = [
     relatedEntryIds: ["green", "rain-on-leaves", "dark-soil", "mint", "tea-leaf"]
   },
   {
-    id: "basilicum-fueguia-1833",
+    id: "fueguia-1833-basilicum",
     brand: "FUEGUIA 1833 / Patagonia",
     brandJa: "フエギア 1833 / パタゴニア",
     name: "Basilicum",
@@ -233,6 +233,62 @@ export const referencePerfumes: ReferencePerfume[] = [
     publicDiscourse: ["Linneo Collectionの植物参照として、バジルの多面性を読むための初期サンプル。"],
     userNotes: ["実香メモ：現時点では写真と説明カードにもとづく初期記録。実香メモは後で追記。"],
     relatedEntryIds: ["green", "mint", "mandarin", "rain-on-leaves"]
+  },
+  {
+    id: "fueguia-1833-amalia-gourmand",
+    brand: "FUEGUIA 1833 / Patagonia",
+    brandJa: "フエギア 1833 / パタゴニア",
+    name: "Amalia Gourmand",
+    nameJa: "アマリア グルマン",
+    concentration: "要確認",
+    collection: "Personajes Collection",
+    displayCategory: "Gourmand / Jasmine",
+    oneLineSummary: "砂糖のきらめきとジャスミンの白さで、一人の甘い人物像を描く香水。",
+    userImpression: "現時点では写真と説明カードにもとづく初期記録",
+    cardNotes: [
+      "Jasmine",
+      "Vanilla",
+      "Cane Sugar",
+      "甘さ・人物像・劇性を感じさせる香り",
+      "清潔感に肌に残る甘さを足したい方向への候補。上品な蜜感・人物性として立つか確認する対象。"
+    ],
+    keyDescriptors: ["gourmand", "jasmine", "vanilla", "sweet"],
+    shortSummary: "ジャスミン、バニラ、砂糖のきらめきを、人物像のある甘さとして読むための参照香水。",
+    officialInfo: { notesStatus: "to be confirmed", notes: ["to be confirmed"] },
+    analyzedLayers: {
+      opening: ["砂糖のきらめき", "白い花の明るさ"],
+      heart: ["ジャスミンの白さ", "上品な蜜感"],
+      drydown: ["肌に残る甘さ", "バニラを思わせるやわらかさ"],
+      comments: ["写真と説明カードにもとづく初期記録。公式ノートの断定ではない。"]
+    },
+    publicDiscourse: ["甘さを単純なお菓子方向ではなく、人物性や劇性として読むための参照。"],
+    userNotes: ["実香メモ：現時点では写真と説明カードにもとづく初期記録"],
+    relatedEntryIds: ["jasmine", "vanilla", "skin-scent", "petal-shadow"]
+  },
+  {
+    id: "fueguia-1833-tinta-roja",
+    brand: "FUEGUIA 1833 / Patagonia",
+    brandJa: "フエギア 1833 / パタゴニア",
+    name: "Tinta Roja",
+    nameJa: "ティンタ ロハ",
+    concentration: "要確認",
+    collection: "Armonías Collection",
+    displayCategory: "Floral / Powdery",
+    oneLineSummary: "白い花の香りに、傷ついた情熱の赤い余韻を重ねた香水。",
+    userImpression: "現時点では写真と説明カードにもとづく初期記録",
+    cardNotes: ["Flor de Hueso", "Jazmín Sambac", "Gardenia", "白花とパウダリーな余韻"],
+    keyDescriptors: ["white floral", "powdery", "floral", "soft"],
+    shortSummary: "白花とパウダリーな余韻を、情熱の気配として品よく読むための参照香水。",
+    officialInfo: { notesStatus: "to be confirmed", notes: ["to be confirmed"] },
+    analyzedLayers: {
+      opening: ["白花の明るさ", "やわらかな花びら"],
+      heart: ["ジャスミンサンバックを思わせる白い花", "ガーデニアの丸み"],
+      drydown: ["パウダリーな余韻", "赤い気配を帯びた静けさ"],
+      comments: ["写真と説明カードにもとづく初期記録。公式ノートの断定ではない。"]
+    },
+    publicDiscourse: ["裏テーマを過度に前面化せず、白花、パウダリー、情熱の余韻として読むための参照。"],
+    userNotes: ["実香メモ：現時点では写真と説明カードにもとづく初期記録"],
+    relatedEntryIds: ["jasmine", "powdery", "petal-shadow", "pressed-powder"]
   }
 ];
 

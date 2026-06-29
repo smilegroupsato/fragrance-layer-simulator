@@ -153,6 +153,8 @@ const facetLabels: Record<string, string> = {
   lactonic: "ラクトン的",
   intimate: "親密",
   musk: "ムスク",
+  gourmand: "グルマン",
+  jasmine: "ジャスミン",
   perception: "知覚",
   individual: "個人差",
   threshold: "閾値",
