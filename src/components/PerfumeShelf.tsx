@@ -10,8 +10,11 @@ export function PerfumeShelf({ perfumes }: { perfumes: ReferencePerfume[] }) {
     <section className="space-y-5">
       <div className="flex items-end justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-[0.26em] text-ink/45">MY SHELF</p>
-          <h2 className="mt-2 text-2xl font-semibold text-ink">自分の香りの棚</h2>
+          <p className="text-xs uppercase tracking-[0.26em] text-ink/45">Aiko's Scent Cabinet</p>
+          <h2 className="mt-2 text-2xl font-semibold text-ink">自分の空気を整える棚</h2>
+          <p className="mt-2 max-w-xl text-sm leading-6 text-ink/60">
+            香水を眺める棚ではなく、いまの状態に必要な空気へ手を伸ばすための小さな薬箱。
+          </p>
         </div>
         <Link href="/perfumes" className="shrink-0 text-sm text-ink/60 underline transition hover:text-ink">
           すべて見る

@@ -48,6 +48,12 @@ export interface ReferencePerfume {
   displayCategory?: string;
   cardNotes?: string[];
   userImpression?: string;
+  moodCategories?: string[];
+  stateTags?: string[];
+  airTags?: string[];
+  fitsWhen?: string[];
+  aikoPositioning?: string;
+  currentRole?: string;
   keyDescriptors: string[];
   shortSummary: string;
   officialInfo: {

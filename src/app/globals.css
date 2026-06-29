@@ -4,15 +4,15 @@
 
 :root {
   color: #2f2428;
-  background: #fbf6f0;
+  background: #fbf8f2;
 }
 
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(205, 151, 143, 0.14), transparent 34rem),
-    radial-gradient(circle at bottom right, rgba(248, 220, 211, 0.32), transparent 30rem),
-    linear-gradient(180deg, #fbf6f0 0%, #fff7f8 48%, #f4ede4 100%);
+    radial-gradient(circle at top left, rgba(221, 207, 187, 0.28), transparent 34rem),
+    radial-gradient(circle at bottom right, rgba(196, 220, 211, 0.18), transparent 30rem),
+    linear-gradient(180deg, #fbf8f2 0%, #fffaf5 48%, #f3ede3 100%);
 }
 
 a {

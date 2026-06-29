@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const cards = [
-  { eyebrow: "GLOSSARY", title: "香りの言葉を知る", href: "/glossary?type=descriptor", body: "言葉、素材、イメージを静かに行き来する。" },
-  { eyebrow: "PERFUMES", title: "香水を眺める", href: "/perfumes", body: "公式情報、言説、自分の記録を分けて読む。" },
-  { eyebrow: "BLEND", title: "香りを重ねてみる", href: "/blend", body: "素材と比率から、重なりの輪郭を見る。" },
-  { eyebrow: "MATERIALS", title: "原料から読む", href: "/glossary?type=material", body: "植物、樹脂、分子を棚の裏側として眺める。" }
+  { eyebrow: "PERFUMES", title: "香りの棚を見る", href: "/perfumes", body: "いま必要な空気に近い一本を探す。" },
+  { eyebrow: "BLEND", title: "足りない空気を足す", href: "/blend", body: "清潔感、甘さ、木の静けさを少し重ねる。" },
+  { eyebrow: "GLOSSARY", title: "香りの言葉を知る", href: "/glossary?type=descriptor", body: "状態や空気を表す言葉をたどる。" },
+  { eyebrow: "MATERIALS", title: "原料から読む", href: "/glossary?type=material", body: "花、樹脂、草、分子の感触を見る。" }
 ];
 
 export function HomeCards() {

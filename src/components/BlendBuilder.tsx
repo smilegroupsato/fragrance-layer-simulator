@@ -53,7 +53,7 @@ export function BlendBuilder() {
       <section className="rounded-lg border border-black/10 bg-white/75 p-5">
         <h2 className="text-lg font-semibold text-ink">素材を追加</h2>
         <p className="mt-2 text-sm leading-6 text-ink/65">
-          比率は相対値として扱います。合計が100でなくても分析できます。
+          今の状態に足りない空気を少し足すための簡易ブレンドです。比率は相対値として扱います。合計が100でなくても分析できます。
         </p>
         <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto] md:items-end">
           <label>
@@ -91,7 +91,7 @@ export function BlendBuilder() {
         <p className="mt-2 text-sm text-ink/65">合計比率: {totalRatio}</p>
         <div className="mt-4 grid gap-3">
           {currentItems.length === 0 ? (
-            <p className="text-sm text-ink/60">素材を追加してください。</p>
+            <p className="text-sm text-ink/60">724に少し甘さを足す、木の静けさに清潔感を足す、などの感覚で素材を追加してください。</p>
           ) : currentItems.map(({ entryId: id, ratio: itemRatio, entry }) => (
             <div key={id} className="grid gap-3 rounded-md bg-mist px-3 py-3 text-sm text-ink/75 md:grid-cols-[1fr_8rem_auto] md:items-center">
               <div>

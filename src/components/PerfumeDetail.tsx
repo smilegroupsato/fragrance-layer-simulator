@@ -14,6 +14,17 @@ function TextSection({ title, children }: { title: string; children: React.React
   );
 }
 
+function TagList({ items }: { items?: string[] }) {
+  if (!items?.length) return null;
+  return (
+    <div className="mt-3 flex flex-wrap gap-2">
+      {items.map((item) => (
+        <span key={item} className="rounded-full bg-[#f7eee5] px-3 py-1 text-xs text-ink/68">{item}</span>
+      ))}
+    </div>
+  );
+}
+
 export function PerfumeDetail({ perfume }: { perfume: ReferencePerfume }) {
   const related = getRelatedPerfumeEntries(perfume);
   const display = getPerfumeDisplay(perfume);
@@ -27,9 +38,34 @@ export function PerfumeDetail({ perfume }: { perfume: ReferencePerfume }) {
           <h1 className="mt-2 text-4xl font-semibold text-ink">{display.productPrimary}</h1>
           {display.productSecondary && <p className="mt-2 text-lg text-ink/55">{display.productSecondary}</p>}
           <p className="mt-2 text-ink/65">{perfume.concentration ?? "濃度は要確認"}</p>
+          {perfume.currentRole && <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/76">{perfume.currentRole}</p>}
         </div>
         <PerfumeImageCarousel perfume={perfume} />
       </div>
+      {(perfume.fitsWhen?.length || perfume.airTags?.length || perfume.aikoPositioning) && (
+        <section className="grid gap-3 md:grid-cols-3">
+          {perfume.fitsWhen?.length ? (
+            <div className="rounded-lg border border-stone-200/80 bg-white/70 p-5">
+              <h2 className="text-sm font-semibold text-ink">この香りが合う時</h2>
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-6 text-ink/70">
+                {perfume.fitsWhen.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ) : null}
+          {perfume.airTags?.length ? (
+            <div className="rounded-lg border border-stone-200/80 bg-white/70 p-5">
+              <h2 className="text-sm font-semibold text-ink">この香りが与える空気</h2>
+              <TagList items={perfume.airTags} />
+            </div>
+          ) : null}
+          {perfume.aikoPositioning ? (
+            <div className="rounded-lg border border-stone-200/80 bg-white/70 p-5">
+              <h2 className="text-sm font-semibold text-ink">愛子にとっての位置づけ</h2>
+              <p className="mt-3 text-sm leading-6 text-ink/70">{perfume.aikoPositioning}</p>
+            </div>
+          ) : null}
+        </section>
+      )}
       <TextSection title="基本情報">
         <p>{perfume.shortSummary}</p>
         {(perfume.collection || perfume.displayCategory) && (
@@ -53,6 +89,7 @@ export function PerfumeDetail({ perfume }: { perfume: ReferencePerfume }) {
             <span key={item} className="rounded-md bg-mist px-2 py-1 text-xs text-ink/70">{getFacetLabel(item)}</span>
           ))}
         </div>
+        <TagList items={perfume.stateTags} />
       </TextSection>
       {(perfume.oneLineSummary || perfume.userImpression || perfume.dictionaryText || perfume.cardNotes?.length) && (
         <TextSection title="香水辞典">
